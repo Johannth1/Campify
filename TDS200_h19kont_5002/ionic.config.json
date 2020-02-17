@@ -1,0 +1,7 @@
+{
+  "name": "TDS200_h19kont_5002",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
