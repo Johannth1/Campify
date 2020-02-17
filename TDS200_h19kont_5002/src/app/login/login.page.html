@@ -1,0 +1,16 @@
+<ion-content>
+  <div id="login-form">
+    <ion-card class="login-form-field">
+      <ion-card-content>
+        <ion-input [(ngModel)]="user.username" placeholder="Username"> </ion-input>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="login-form-field">
+      <ion-card-content>
+        <ion-input [(ngModel)]="user.password" placeholder="Password" type="password"></ion-input>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="block" color="medium" (click)="loginUser()">Login</ion-button>
+    <ion-button expand="block" color="medium" (click)="registerUser()">Register</ion-button>
+  </div>
+</ion-content>
