@@ -1,17 +1,29 @@
-<ion-content>
-  <div id="login-form">
+
+<ion-content class="login-backscreen" >
+
+  <div class="logo-div">
+    <img src="../../assets/logo.png">
+  </div>
+
+  <div class="login-form">
+
     <ion-card class="login-form-field">
+
       <ion-card-content>
-        <ion-input [(ngModel)]="user.email" placeholder="Username"> </ion-input>
+        <ion-input [(ngModel)]="user.email" placeholder="E-post"> </ion-input>
       </ion-card-content>
     </ion-card>
+
     <ion-card class="login-form-field">
       <ion-card-content>
-        <ion-input [(ngModel)]="user.password" placeholder="Password" type="password"></ion-input>
+        <ion-input [(ngModel)]="user.password" placeholder="Passord" ></ion-input>
       </ion-card-content>
     </ion-card>
-    <ion-button class="login-button" expand="block" color="medium" (click)="loginUser()">Login</ion-button>
-    <ion-button class="register-button" expand="block" color="medium" (click)="registerUser()">Register</ion-button>
+
+    <div class="buttton-container">
+    <ion-button class="login-button" expand="block"  (click)="loginUser()">Logg inn</ion-button>
+    <ion-button class="register-button" expand="block" (click)="registerUser()">Opprett konto</ion-button>
+    </div>
   </div>
 </ion-content>
 
