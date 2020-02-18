@@ -1,12 +1,36 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+import { 
+  canActivate, 
+  redirectLoggedInTo, 
+  redirectUnauthorizedTo 
+} from "@angular/fire/auth-guard";
+
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  { 
+    path: 'home', 
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+    ...canActivate(redirectUnauthorizedTo(['login']))
+  },
+  /*{ 
+    path: 'detail-view', 
+    loadChildren: './detail-view/detail-view.module#DetailViewPageModule' 
+  },*/
+  { 
+    path: 'login', 
+    loadChildren: './login/login.module#LoginPageModule',
+    ...canActivate(redirectLoggedInTo(['home']))
+  },
+  { path: 'new-camp', loadChildren: './new-camp/new-camp.module#NewCampPageModule' },
+  {
+    path: 'camp-detail',
+    loadChildren: () => import('./camp-detail/camp-detail.module').then( m => m.CampDetailPageModule)
   },
 ];
 

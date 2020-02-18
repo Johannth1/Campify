@@ -1,0 +1,23 @@
+<article>
+  <ion-grid>
+   
+
+    <ion-row>
+      <ion-card class="card-style" color="medium" >
+        <ion-card-content class="title-content">
+          {{postData.title}}
+        </ion-card-content>
+        <img [src]="postData.imageUrl" />
+        <ion-col>
+          <br>
+          <ion-label>
+             {{postData.user}} -- {{postData.position}}
+          </ion-label>
+          <br>
+        </ion-col>
+        {{postData.description}}
+        
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</article>

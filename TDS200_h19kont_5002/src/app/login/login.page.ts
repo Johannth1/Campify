@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { async } from '@angular/core/testing';
-
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +11,9 @@ import { async } from '@angular/core/testing';
 })
 export class LoginPage implements OnInit {
 
-
-  public user = { username: "", password: "" };
+  private user = { 
+    email: "", 
+    password: "" };
 
   constructor(
     private authService: AuthService,
@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
 
   async loginUser() {
     try {
-      this.authService.loginUser({ username: this.user.username, password: this.user.password });
+      this.authService.loginUser({ email: this.user.email, password: this.user.password });
       this.router.navigate(['home']);
     } catch (e) {
       const toast = await this.toastController.create({
@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
 
   async registerUser() {
     try {
-      this.authService.registerUser({ username: this.user.username, password: this.user.password });
+      this.authService.registerUser({ email: this.user.email, password: this.user.password });
       this.router.navigate(['home']);
     } catch (e) {
       const toast = await this.toastController.create({
@@ -49,7 +49,6 @@ export class LoginPage implements OnInit {
       console.warn(e);
     }
   }
-
 
   ngOnInit() {
   }

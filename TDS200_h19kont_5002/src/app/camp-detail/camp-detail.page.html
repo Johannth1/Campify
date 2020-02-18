@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <!-- Under bruker vi det som ofte kalles "Elvis operator"-->
+    <!-- Den sier at vi kun skal vise title hvis det feltet finnes på post-objektet -->
+    <ion-title>{{post?.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-cardItem [postData]="post" [showUser]="true"></app-cardItem>
+</ion-content>

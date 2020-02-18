@@ -1,0 +1,21 @@
+$grayish: #D2D9E5;
+
+
+
+@mixin avatar-generator($size) {
+    width: #{$size};
+    height: #{$size};
+}
+
+@mixin border-generator($size, $color) {
+    border: #{$size} solid #{$color};
+}
+
+.title-content {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.time-ago {
+    color: $grayish !important;
+}
