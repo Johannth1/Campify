@@ -1,35 +1,44 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar class="toolbar-color">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+    <ion-button (click)="goback()">
+    <ion-icon class="goback-icon" name="chevron-back-outline"></ion-icon>
+    </ion-button>
     </ion-buttons>
-    <ion-title>New Camp</ion-title>
+    <ion-title class="toolbar-title">Campify</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card>
-    <img *ngIf="cameraPreview" src="{{'data:image/jpeg;base64,' + cameraPreview}}" style="max-height: 40vh" />
+<ion-content class="background-style">
+
+
+  <ion-card class="card-style">
+    <ion-card-content>
+      <img class="camera-style" *ngIf="cameraPreview" src="{{'data:image/jpeg;base64,' + cameraPreview}}"  />
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card class="card-style">
     <ion-card-content>
       <ion-grid>
         <ion-row>
           <ion-col size="12">
-            <ion-button expand="block" class="btn-take-picture" (click)="takePicture()">Ta bilde</ion-button>
+            <ion-button class="button-style" expand="block"  (click)="takePicture()">Ta bilde</ion-button>
           </ion-col>
           <ion-col size="12">
-            <ion-input type="text" [(ngModel)]="myTitle" placeholder="Title" class="title"></ion-input>
+            <ion-input type="text" [(ngModel)]="myTitle" placeholder=" Titel" class="title"></ion-input>
           </ion-col>
           <ion-col size="12">
-            <ion-input type="text" [(ngModel)]="myDescription" placeholder="Description" class="description"></ion-input>
+            <ion-input type="text" [(ngModel)]="myDescription" placeholder=" Beskrivelse" class="description"></ion-input>
           </ion-col>
           <ion-col size="12">
-            <ion-input type="text" [(ngModel)]="myPosition" placeholder="Position" class="position"></ion-input>
+            <ion-input type="text" [(ngModel)]="myPosition" placeholder=" Lokasjon" class="position"></ion-input>
           </ion-col>
           <ion-col size="12">
-            <ion-button expand="block" class="btn-post-firebase" (click)="postToFirebase()">Post til Firebase</ion-button>
+            <ion-button class="button-style" expand="block" (click)="postToFirebase()">Legg ut</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
-</ion-content>

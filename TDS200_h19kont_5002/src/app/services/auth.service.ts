@@ -10,11 +10,13 @@ export class AuthService {
     private fireauth: AngularFireAuth
   ) { }
 
-  async loginUser({ email, password }) {
+  async loginUser({ email, password }) 
+  {
     return await this.fireauth.auth.signInWithEmailAndPassword(email, password);
   }
 
-  async registerUser({ email, password }) {
+  async registerUser({ email, password }) 
+  {
     return await this.fireauth.auth.createUserWithEmailAndPassword(email, password);
   }
 

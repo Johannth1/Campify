@@ -6,6 +6,7 @@ import { v4 as uuid } from "uuid";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { first } from "rxjs/operators";
 import sightscards from '../Models/Campsmodel';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class NewCampPage implements OnInit {
     private camera: Camera,
     private firestorage: AngularFireStorage,
     private firestore: AngularFirestore,
-    private firebaseauth: AngularFireAuth
+    private firebaseauth: AngularFireAuth,
+    private route: ActivatedRoute, private router: Router
   ) { }
 
   async takePicture() {
@@ -72,7 +74,9 @@ export class NewCampPage implements OnInit {
     return firestorageFileRef.getDownloadURL().toPromise();
   }
 
-  
+  async goback() {
+    this.router.navigate(['/'])
+  }
 
   ngOnInit() {
   }
