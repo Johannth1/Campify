@@ -1,14 +1,14 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar class="toolbar-color">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+    <ion-button (click)="goback()">
+    <ion-icon class="goback-icon" name="chevron-back-outline"></ion-icon>
+    </ion-button>
     </ion-buttons>
-    <!-- Under bruker vi det som ofte kalles "Elvis operator"-->
-    <!-- Den sier at vi kun skal vise title hvis det feltet finnes på post-objektet -->
-    <ion-title>{{post?.title}}</ion-title>
+    <ion-title class="toolbar-title">Campify</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="backscreen">
   <app-cardItem [postData]="post" [showUser]="true"></app-cardItem>
 </ion-content>

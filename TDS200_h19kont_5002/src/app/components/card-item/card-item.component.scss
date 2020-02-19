@@ -1,21 +1,23 @@
-$grayish: #D2D9E5;
 
-
-
-@mixin avatar-generator($size) {
-    width: #{$size};
-    height: #{$size};
+.card-style {
+    --background: white;
 }
 
-@mixin border-generator($size, $color) {
-    border: #{$size} solid #{$color};
+.card-posistion {
+ 
 }
 
-.title-content {
+.card-title {
+    margin-left: 5%;
     font-size: 20px;
-    font-weight: bold;
+    color: #242123;
 }
 
-.time-ago {
-    color: $grayish !important;
+.card-user {
+    font-style: italic;
+}
+
+.card-posistion {
+    margin-top: 5%;
+    margin-left: 5%;
 }

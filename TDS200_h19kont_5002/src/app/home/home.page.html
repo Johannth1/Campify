@@ -1,27 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title size="large">Campify</ion-title>
-    <ion-button (click)="logoutUser()">
-      <ion-icon slot="icon-only" name="exit"></ion-icon>
-    </ion-button>
+
+<ion-header  [translucent]="true">
+  <ion-toolbar class="toolbar">
+    <ion-title class="title-text">Campify</ion-title>
+        <ion-icon class="logout-icon"  name="log-out-outline" (click)="logoutUser()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-  <div id="container">
-
+  <div class="container" >
     <ion-list>
-      <ion-item *ngFor="let post of posts$ | async" lines="none" (click)="navigateToDetailView(post)">
+      <ion-item class="login-backscreen" *ngFor="let post of posts$ | async" lines="none" (click)="navigateToDetailView(post)">
         <app-cardItem [postData]="post" [showUser]="false"></app-cardItem>
       </ion-item>
     </ion-list>
-
-    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-      <ion-fab-button [routerLink]="['/new-camp']">
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-    
+ 
   </div>
 </ion-content>
+
+  <ion-tab-bar class="tab-bar" slot="bottom">
+    <ion-fab-button class="button-add" tab="add" [routerLink]="['/new-camp']">
+      <ion-icon class="icon-add" name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-tab-bar>
+
+  

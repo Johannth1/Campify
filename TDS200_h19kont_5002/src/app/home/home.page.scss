@@ -1,19 +1,17 @@
-#container {
-  
-
-  
+.container {
   left: 0;
   right: 0;
   top: 50%;
   
+  
 }
 
-#container strong {
+.container strong {
   font-size: 20px;
   line-height: 26px;
 }
 
-#container p {
+.container p {
   font-size: 16px;
   line-height: 22px;
 
@@ -22,9 +20,29 @@
   margin: 0;
 }
 
-#container a {
+.container a {
   text-decoration: none;
 }
+
+.toolbar {
+  --background: #544E48;
+}
+.title-text {
+  color: #BBEAFC;
+}
+
+.logout-icon {
+  font-size: 30px;
+  float: right;
+  color: #BBEAFC;
+}
+
+.login-backscreen {
+  --background: #BBEAFC;
+}  
+
+
+
 
 ion-content ion-toolbar {
   --background: translucent;
@@ -33,4 +51,27 @@ ion-content ion-toolbar {
 ion-button {
   float: right;
   font-size: small;
+}
+
+.title-text {
+  font-size: 30px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.background-style {
+  --background: #BBEAFC;
+}
+
+.tab-bar {
+  --background: transparent;
+  border-color: transparent;
+}
+.icon-add :focus  {
+ color: #BBEAFC;
+ outline: none;
+}
+
+.button-add {
+  --background: #544E48;
 }

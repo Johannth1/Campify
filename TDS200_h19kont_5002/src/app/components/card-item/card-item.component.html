@@ -1,23 +1,19 @@
 <article>
-  <ion-grid>
-   
-
-    <ion-row>
-      <ion-card class="card-style" color="medium" >
-        <ion-card-content class="title-content">
-          {{postData.title}}
+  
+      <ion-card class="card-style" >
+        <img class="image-content" [src]="postData.imageUrl" />
+        <ion-header>
+          <ion-card-subtitle class="card-posistion">{{postData.position}}</ion-card-subtitle>
+          <ion-card-title class="card-title">{{postData.title}}</ion-card-title>
+        </ion-header>
+        <ion-card-content>
+          <div class="card-user">
+          {{postData.user}}
+        </div>
+          {{postData.description}}
         </ion-card-content>
-        <img [src]="postData.imageUrl" />
-        <ion-col>
-          <br>
-          <ion-label>
-             {{postData.user}} -- {{postData.position}}
-          </ion-label>
-          <br>
-        </ion-col>
-        {{postData.description}}
         
       </ion-card>
-    </ion-row>
-  </ion-grid>
+   
 </article>
+

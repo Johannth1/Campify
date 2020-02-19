@@ -12,13 +12,18 @@ export class CampDetailPage implements OnInit {
 
   private post: Campsmodel;
 
+  // Finn ut hva i helevete denne gjør
+
   constructor(private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
-        // Vi lagrer dataen vi får med navigasjonen inn i this.post for å kunne vise binde dataen i HTML-fila
         this.post = this.router.getCurrentNavigation().extras.state.post as Campsmodel;
       }
     });
+  }
+  // Går tilbake med iconet, async med promise. 
+  async goback() {
+    this.router.navigate(['/'])
   }
 
   ngOnInit() {
