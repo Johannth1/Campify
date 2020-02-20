@@ -12,8 +12,9 @@ export class CampDetailPage implements OnInit {
 
   private post: Campsmodel;
 
-  // Finn ut hva i helevete denne gjør
+  
 
+  // Tar i bruk ActivedRoute og router, for å se finne ut hvor man er, også route til riktig sted etterpå, ved post. 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {

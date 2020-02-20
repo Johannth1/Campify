@@ -8,6 +8,7 @@ import Campsmodel from 'src/app/Models/Campsmodel';
 })
 export class cardItemComponent implements OnInit {
 
+  // Viser Input fra Campsmodel modellen vi har laget for å forme databasen. 
   @Input() postData: Campsmodel;
   @Input() showUser: boolean;
   @Input() description: Campsmodel

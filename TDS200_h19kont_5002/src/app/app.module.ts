@@ -15,9 +15,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
-import { AuthService } from './services/auth.service';
 
-// Your web app's Firebase configuration
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyCP0j_qtsVfJGsV0UiXbn4OOFNazgVQh2I",
   authDomain: "campify-54cf1.firebaseapp.com",

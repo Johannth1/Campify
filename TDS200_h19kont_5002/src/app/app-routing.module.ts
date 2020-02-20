@@ -13,15 +13,14 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
+  // Denne passer på at hvis man ikke er logget inn, så blir man sendt tilbake til login skjermen,
+  // for å passe på at du faktisk må ha en bruker for å ta i bruk applikasjonen.
   { 
     path: 'home', 
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
     ...canActivate(redirectUnauthorizedTo(['login']))
   },
-  /*{ 
-    path: 'detail-view', 
-    loadChildren: './detail-view/detail-view.module#DetailViewPageModule' 
-  },*/
+  // Her passer man på at man blir sendt til home, hvis man faktisk har logget inn.
   { 
     path: 'login', 
     loadChildren: './login/login.module#LoginPageModule',

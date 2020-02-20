@@ -22,10 +22,12 @@ export class HomePage {
   }
 
   ngOnInit() {
-    // Her kobler vi oss til vår Firestore Collection kalt "posts", og lytter på endringer (valueChanges()).
+    // kobler oss på firebase collection vi har laget calt Camps, og tar i bruk observables så hører om det har skjedd noen forandreringer. 
     this.posts$ = this.firestore.collection("Camps").valueChanges() as Observable<Campsmodel[]>;
   }
 
+  // Her har vi et async funksjon som logger ut brukeren ved å trykke på iconet inne i HTML filen, 
+  // Den tar i bruk firebase sin auth for å logge oss ut, og router oss tilbake til login siden. 
   async logoutUser() {
     try {
       await this.fireauth.auth.signOut();
@@ -35,6 +37,7 @@ export class HomePage {
     }
   }
 
+  // denne router oss til camp-detail hvis vi trykket på en post
   navigateToDetailView (tappedPost: Campsmodel) {
     let navigationExtras: NavigationExtras = {
       state: {

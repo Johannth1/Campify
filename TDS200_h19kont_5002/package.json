@@ -1,7 +1,7 @@
 {
-  "name": "TDS200_h19kont_5004",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
+  "name": "TDS200_h19kont_5002",
+  "version": "1.0.1",
+  "author": "JohanThorleifNæss",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
